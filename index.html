@@ -336,25 +336,40 @@
 
     /* Step 2 animation (Browser) */
     html.theme-light #step-2 .bg-\[\#1e293b\] {
-      background-color: #f1f5f9 !important;
+      background-color: #ffffff !important;
+      border-color: rgba(15, 23, 42, 0.1) !important;
     }
 
     html.theme-light #step-2 .bg-\[\#0f172a\] {
-      background-color: #ffffff !important;
-      border-color: rgba(15, 23, 42, 0.1) !important;
+      background-color: #f1f5f9 !important;
+      border-color: rgba(15, 23, 42, 0.05) !important;
+      box-shadow: none !important;
     }
 
     html.theme-light #step-2 .bg-\[\#334155\] {
       background-color: #e2e8f0 !important;
     }
 
+    html.theme-light #step-2 .bg-black\/50 {
+      background-color: #f8fafc !important;
+      border-color: rgba(15, 23, 42, 0.1) !important;
+    }
+
+    html.theme-light #step-2 code.text-cyan-300 {
+      color: #0891b2 !important;
+    }
+
     html.theme-light #step-2 .text-white {
       color: #020617 !important;
     }
 
+    html.theme-light #step-2 .opacity-20 {
+      opacity: 0.1 !important;
+    }
+
     /* Step 3 animation (Toggle) */
     html.theme-light #step-3 .bg-\[\#0f172a\] {
-      background-color: #f8fafc !important;
+      background-color: #ffffff !important;
     }
 
     html.theme-light #step-3 .bg-\[\#1e293b\] {
@@ -366,9 +381,30 @@
       background-color: #f1f5f9 !important;
     }
 
+    html.theme-light #step-3 .bg-\[#2e3546\] {
+      background-color: #f1f5f9 !important;
+    }
+
+    /* Fix for un-escaped version */
+    html.theme-light #step-3 .bg-\[#1e293b\] {
+      background-color: #f8fafc !important;
+      border-bottom-color: rgba(15, 23, 42, 0.05) !important;
+    }
+
+    /* Context header */
     html.theme-light #step-3 .text-slate-200 {
       color: #0f172a !important;
     }
+
+    html.theme-light #step-3 .opacity-20 {
+      opacity: 0.05 !important;
+    }
+
+    html.theme-light #step-3 .bg-gradient-to-r.from-\[\#1e293b\] {
+      display: none !important;
+    }
+
+    /* Remove dark gradient */
 
     /* Step 4 animation (File Picker) */
     html.theme-light #step-4 .bg-\[\#1e293b\] {
@@ -834,24 +870,44 @@
               <div class="w-2 h-2 rounded-full bg-purple-500 shadow-[0_0_10px_rgba(168,85,247,0.8)]"></div>
             </div>
 
-            <!-- ANIMATION 1: Zip File Dropping -->
+            <!-- ANIMATION 1: Unified Browser Frame (Step 1 Focus) -->
             <div class="hidden md:block flex-1 order-1 md:order-3">
               <div
-                class="aspect-[4/3] rounded-2xl bg-[#0f172a] border border-white/10 flex items-center justify-center relative overflow-hidden group shadow-2xl">
-                <!-- Mock Folder -->
-                <div class="absolute bottom-10">
-                  <svg class="w-24 h-24 text-slate-700" fill="currentColor" viewBox="0 0 24 24">
-                    <path
-                      d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
-                  </svg>
+                class="aspect-[4/3] rounded-2xl bg-[#0f172a] border border-white/10 flex flex-col items-center justify-center relative overflow-hidden group shadow-2xl">
+                <!-- Unified Mac Header & Browser Toolbar -->
+                <div class="w-full bg-[#1e293b] border-b border-white/5 flex flex-col shrink-0">
+                  <div class="h-8 flex items-center px-4 gap-1.5">
+                    <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                    <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                    <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                    <div class="flex-1 text-center text-[10px] text-slate-500 font-medium pr-12">Beta Invitation</div>
+                  </div>
+                  <div class="h-12 flex items-center px-4 gap-4 bg-[#1e293b]/50">
+                    <div class="flex-1 h-8 bg-[#0f172a] rounded-md border border-white/5 flex items-center px-3">
+                      <div class="text-[10px] font-mono text-slate-500">getnova.ai/download</div>
+                    </div>
+                  </div>
                 </div>
-                <!-- Dropping Zip File -->
-                <div class="absolute animate-file-drop p-3 bg-white/5 border border-white/20 backdrop-blur rounded-lg">
-                  <svg class="w-10 h-10 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                  <div class="text-[10px] text-center mt-1 text-white">nova.zip</div>
+
+                <div class="flex-1 w-full flex items-center justify-center relative bg-slate-900/50">
+                  <!-- Central Focus: Big Download Notification -->
+                  <div
+                    class="p-6 bg-[#1e293b] rounded-2xl border border-white/20 shadow-2xl flex flex-col items-center gap-4 animate-bounce">
+                    <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
+                      <svg class="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                      </svg>
+                    </div>
+                    <div class="text-center">
+                      <div class="text-xs font-bold text-white">nova-beta.zip</div>
+                      <div class="text-[10px] text-slate-500 mt-1">Downloading... (12.4 MB)</div>
+                    </div>
+                    <!-- Mini Progress Bar -->
+                    <div class="w-32 h-1 bg-slate-800 rounded-full overflow-hidden">
+                      <div class="h-full bg-blue-500 animate-pulse" style="width: 65%"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -861,42 +917,54 @@
         <!-- Detail Step 2: Simulated Browser URL -->
         <div id="step-2" class="relative scroll-mt-32">
           <div class="flex flex-col md:flex-row gap-8 items-center">
-            <!-- ANIMATION 2: Typing URL (Zoomed) -->
+            <!-- ANIMATION 2: Unified Browser Frame (Step 2 Focus) -->
             <div class="hidden md:block flex-1 order-1">
               <div
-                class="aspect-[4/3] rounded-2xl bg-[#1e293b] border border-white/10 overflow-hidden flex flex-col justify-center items-center shadow-2xl relative">
-
-                <!-- Background Blur/Context -->
-                <div class="absolute inset-0 opacity-20 pointer-events-none">
-                  <div class="h-8 bg-[#334155] mb-2"></div>
-                  <div class="flex gap-4 p-4">
-                    <div class="w-1/3 h-32 bg-slate-700 rounded"></div>
-                    <div class="w-2/3 h-32 bg-slate-700 rounded"></div>
+                class="aspect-[4/3] rounded-2xl bg-[#0f172a] border border-white/10 overflow-hidden flex flex-col shadow-2xl relative">
+                <!-- Unified Mac Header & Browser Toolbar -->
+                <div class="w-full bg-[#1e293b] border-b border-white/5 flex flex-col shrink-0">
+                  <!-- Mac Buttons -->
+                  <div class="h-8 flex items-center px-4 gap-1.5">
+                    <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                    <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                    <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                    <div class="flex-1 text-center text-[10px] text-slate-500 font-medium pr-12">New Tab</div>
+                  </div>
+                  <!-- Toolbar -->
+                  <div class="h-12 flex items-center px-4 gap-4 bg-[#1e293b]/50">
+                    <div class="flex gap-2">
+                      <div class="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center">
+                        <svg class="w-3 h-3 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path d="M15 19l-7-7 7-7" />
+                        </svg>
+                      </div>
+                      <div class="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center">
+                        <svg class="w-3 h-3 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </div>
+                    <!-- Unified Address Bar -->
+                    <div
+                      class="flex-1 h-8 bg-[#0f172a] rounded-md border border-white/5 flex items-center px-3 relative">
+                      <svg class="w-3 h-3 text-slate-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path
+                          d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                      </svg>
+                      <div class="text-xs font-mono text-white flex items-center h-full">
+                        <span class="whitespace-nowrap overflow-hidden border-r-2 border-purple-500 pr-1"
+                          style="animation: typewriterLoop 4s steps(25) infinite">chrome://extensions</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <!-- Magnified Address Bar -->
-                <div
-                  class="w-[90%] max-w-md bg-[#0f172a] rounded-xl border border-white/20 p-4 shadow-2xl transform scale-100 md:scale-110 z-10">
-                  <div class="text-[10px] text-slate-500 mb-2 font-semibold tracking-wider uppercase">Browser Address
-                    Bar</div>
-                  <div
-                    class="h-14 bg-[#1e293b] rounded-lg border border-slate-600 flex items-center px-4 relative overflow-hidden">
-                    <!-- Lock Icon -->
-                    <svg class="w-5 h-5 text-slate-400 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                    </svg>
-
-                    <!-- Typing Text -->
-                    <div class="text-xl md:text-2xl font-mono text-white flex items-center h-full">
-                      <span class="whitespace-nowrap overflow-hidden border-r-2 border-purple-500 pr-1"
-                        style="animation: typewriterLoop 4s steps(25) infinite">chrome://extensions</span>
-                    </div>
-                  </div>
-                  <div class="mt-2 flex justify-end">
-                    <div class="text-[10px] text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded animate-pulse">Press
-                      Enter</div>
+                <!-- Browser Body Content -->
+                <div class="flex-1 p-6 space-y-4 opacity-10">
+                  <div class="w-full h-24 bg-slate-700/50 rounded-lg"></div>
+                  <div class="flex gap-4">
+                    <div class="w-1/3 h-32 bg-slate-700/30 rounded-lg"></div>
+                    <div class="w-2/3 h-32 bg-slate-700/30 rounded-lg"></div>
                   </div>
                 </div>
 
@@ -934,10 +1002,8 @@
                     }
                   }
                 </style>
-
               </div>
             </div>
-
             <!-- Center Dot -->
             <div
               class="hidden md:flex flex-none w-8 h-8 rounded-full bg-[#030712] border border-white/20 items-center justify-center z-10 order-2">
@@ -984,54 +1050,68 @@
               <div class="w-2 h-2 rounded-full bg-pink-500 shadow-[0_0_10px_rgba(236,72,153,0.8)]"></div>
             </div>
 
-            <!-- ANIMATION 3: Switching Toggle (Magnified Top-Right Focus) -->
+            <!-- ANIMATION 3: Unified Browser Frame (Step 3 Focus) -->
             <div class="hidden md:block flex-1 order-1 md:order-3">
               <div
                 class="aspect-[4/3] rounded-2xl bg-[#0f172a] border border-white/10 flex flex-col items-center justify-center overflow-hidden shadow-2xl relative">
 
-                <!-- Context Fade (Background) -->
-                <div class="absolute inset-0 opacity-20 pointer-events-none">
-                  <div class="h-9 bg-[#2e3546] w-full"></div>
-                  <div class="h-14 bg-[#1e293b] w-full border-b border-white/5"></div>
-                </div>
-
-                <!-- Magnified Top-Right Corner Card -->
-                <div
-                  class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md bg-[#1e293b] rounded-xl border border-white/20 shadow-2xl overflow-hidden z-10">
-                  <!-- Mac Window Control Hints (implied we are looking at a window) -->
-                  <div class="h-6 bg-[#2e3546] flex items-center justify-end px-3 gap-2">
-                    <!-- Just showing empty space/tab aesthetics -->
-                    <div class="w-16 h-2 bg-white/5 rounded-full"></div>
+                <!-- Unified Mac Header & Browser Toolbar -->
+                <div class="w-full bg-[#1e293b] border-b border-white/5 flex flex-col shrink-0">
+                  <!-- Mac Buttons -->
+                  <div class="h-8 flex items-center px-4 gap-1.5">
+                    <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                    <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                    <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                    <div class="flex-1 text-center text-[10px] text-slate-500 font-medium pr-12">Extensions</div>
                   </div>
-
-                  <!-- Extensions Toolbar Area -->
-                  <div
-                    class="h-20 bg-[#1e293b] flex items-center justify-between px-6 border-b border-white/5 relative">
-                    <!-- Left side fade -->
-                    <div
-                      class="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-[#1e293b] to-transparent z-20">
+                  <!-- Toolbar -->
+                  <div class="h-12 flex items-center px-4 gap-4 bg-[#1e293b]/50">
+                    <div class="flex gap-2">
+                      <div class="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center opacity-30">
+                        <svg class="w-3 h-3 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path d="M15 19l-7-7 7-7" />
+                        </svg>
+                      </div>
+                      <div class="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center opacity-30">
+                        <svg class="w-3 h-3 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
                     </div>
-
-                    <div class="text-sm text-slate-500 font-medium mr-4 opacity-50">...nsions</div>
-
+                    <!-- Address Bar (Static in Step 3) -->
+                    <div class="flex-1 h-8 bg-[#0f172a] rounded-md border border-white/5 flex items-center px-3">
+                      <div class="text-[10px] font-mono text-slate-400">chrome://extensions</div>
+                    </div>
+                  </div>
+                  <!-- Extensions Page Subheader (Contains the target toggle) -->
+                  <div
+                    class="h-14 bg-[#1e293b] flex items-center justify-between px-6 border-t border-white/5 relative">
+                    <div class="text-sm font-bold text-white tracking-tight">Extensions</div>
                     <!-- The Focus: Toggle -->
                     <div class="flex items-center gap-4">
-                      <span class="text-sm font-medium text-slate-200">Developer mode</span>
-                      <div class="w-12 h-7 rounded-full relative transition-colors duration-300 shadow-inner"
+                      <span class="text-[10px] font-medium text-slate-400">Developer mode</span>
+                      <div class="w-10 h-6 rounded-full relative transition-colors duration-300 shadow-inner"
                         style="animation: macSwitchBg 4s infinite">
                         <div
-                          class="absolute top-1 left-1 w-5 h-5 rounded-full bg-white shadow-md transition-transform duration-300"
+                          class="absolute top-1 left-1 w-4 h-4 rounded-full bg-white shadow-md transition-transform duration-300"
                           style="animation: macSwitchKnob 4s infinite ease-in-out"></div>
                       </div>
                     </div>
                   </div>
+                </div>
 
-                  <!-- Dropdown/Action Hint -->
-                  <div class="h-12 bg-[#0f172a] flex items-center justify-end px-6">
-                    <div class="text-[10px] text-purple-400 bg-purple-500/10 px-2 py-1 rounded opacity-0"
-                      style="animation: revealHint 4s infinite">
-                      &uarr; Top Right Corner
-                    </div>
+                <!-- Browser Body Content (Extensions Grid Mockup) -->
+                <div class="flex-1 w-full p-6 grid grid-cols-2 gap-4 opacity-10">
+                  <div class="h-24 bg-slate-700/50 rounded-lg"></div>
+                  <div class="h-24 bg-slate-700/50 rounded-lg"></div>
+                  <div class="h-24 bg-slate-700/50 rounded-lg"></div>
+                  <div class="h-24 bg-slate-700/50 rounded-lg"></div>
+                </div>
+
+                <div class="absolute bottom-6 right-6">
+                  <div class="text-[10px] text-purple-400 bg-purple-500/10 px-2 py-1 rounded opacity-0"
+                    style="animation: revealHint 4s infinite">
+                    &uarr; Top Right Corner
                   </div>
                 </div>
 
@@ -1102,36 +1182,69 @@
         <!-- Detail Step 4: Simulated File Picker -->
         <div id="step-4" class="relative scroll-mt-32">
           <div class="flex flex-col md:flex-row gap-8 items-center">
-            <!-- ANIMATION 4: Folder Select -->
+            <!-- ANIMATION 4: Unified Browser Frame (Step 4 Focus) -->
             <div class="hidden md:block flex-1 order-1">
               <div
-                class="aspect-[4/3] rounded-2xl bg-[#1e293b] border border-white/10 overflow-hidden flex flex-col shadow-2xl">
-                <div class="h-8 bg-[#334155] border-b border-slate-600 flex items-center px-4 text-xs text-slate-300">
-                  Select Extension Directory</div>
-                <div class="flex-1 p-4 space-y-2">
-                  <div class="flex items-center gap-2 p-2 rounded text-slate-400 text-xs">
-                    <svg class="w-4 h-4 text-slate-500" fill="currentColor" viewBox="0 0 24 24">
-                      <path
-                        d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
-                    </svg> <span>Downloads</span>
+                class="aspect-[4/3] rounded-2xl bg-[#0f172a] border border-white/10 overflow-hidden flex flex-col shadow-2xl relative">
+
+                <!-- Unified Mac Header & Browser Toolbar (Background) -->
+                <div class="w-full bg-[#1e293b] border-b border-white/5 flex flex-col shrink-0 opacity-40 blur-[1px]">
+                  <div class="h-8 flex items-center px-4 gap-1.5">
+                    <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                    <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                    <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
                   </div>
-                  <!-- Selected Folder -->
-                  <div
-                    class="flex items-center gap-2 p-2 rounded text-slate-200 text-xs animate-file-select border border-transparent">
-                    <svg class="w-4 h-4 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
-                      <path
-                        d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
-                    </svg> <span>nova-beta-v0.1</span>
-                  </div>
-                  <div class="flex items-center gap-2 p-2 rounded text-slate-400 text-xs">
-                    <svg class="w-4 h-4 text-slate-500" fill="currentColor" viewBox="0 0 24 24">
-                      <path
-                        d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
-                    </svg> <span>Documents</span>
+                  <div class="h-12 flex items-center px-4 gap-4 bg-[#1e293b]/50">
+                    <div class="flex-1 h-8 bg-[#0f172a] rounded-md border border-white/5 flex items-center px-3">
+                      <div class="text-[10px] font-mono text-slate-500">chrome://extensions</div>
+                    </div>
                   </div>
                 </div>
-                <div class="p-3 bg-[#0f172a] flex justify-end">
-                  <div class="px-4 py-1.5 bg-blue-600 text-white text-xs rounded animate-pulse">Select Folder</div>
+
+                <!-- Extensions Page Buttons (Mockup) -->
+                <div class="h-12 bg-[#1e293b]/50 flex items-center px-6 gap-3 opacity-40 blur-[1px]">
+                  <div class="px-3 py-1 bg-blue-600/30 rounded text-[10px] text-white/50 border border-blue-500/20">Load
+                    unpacked</div>
+                  <div class="px-3 py-1 bg-slate-700/50 rounded text-[10px] text-slate-500">Pack extension</div>
+                </div>
+
+                <!-- Layered File Picker Dialog (The focus) -->
+                <div class="absolute inset-x-8 top-12 bottom-8 z-20 flex items-center justify-center">
+                  <div
+                    class="w-full max-w-sm bg-[#1e293b] rounded-xl border border-white/20 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.6)] flex flex-col overflow-hidden">
+                    <!-- Dialog Mac Header -->
+                    <div class="h-8 bg-white/5 border-b border-white/5 flex items-center justify-between px-4">
+                      <div class="flex items-center gap-1.5">
+                        <div class="w-2.5 h-2.5 rounded-full bg-slate-600"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-slate-600"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-slate-600"></div>
+                      </div>
+                      <div class="text-[10px] text-slate-400 font-medium">Select Extension Directory</div>
+                      <div class="w-10"></div> <!-- spacer -->
+                    </div>
+                    <!-- Dialog Content -->
+                    <div class="flex-1 p-4 flex flex-col">
+                      <div
+                        class="flex items-center gap-2 p-2 rounded bg-blue-600/20 border border-blue-500/30 animate-pulse">
+                        <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                          <path
+                            d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
+                        </svg>
+                        <div class="text-xs text-white">nova-beta-v0.1</div>
+                      </div>
+                      <div class="mt-4 flex flex-col gap-2">
+                        <div class="h-3 w-1/2 bg-slate-700/50 rounded"></div>
+                        <div class="h-3 w-1/3 bg-slate-700/50 rounded"></div>
+                        <div class="h-3 w-3/4 bg-slate-700/50 rounded"></div>
+                      </div>
+                      <div class="mt-auto flex justify-end gap-2 pt-4">
+                        <div class="px-3 py-1.5 bg-slate-700/50 rounded text-[10px] text-slate-400">Cancel</div>
+                        <div
+                          class="px-3 py-1.5 bg-blue-600 rounded text-[10px] text-white font-bold shadow-lg shadow-blue-500/20">
+                          Select Folder</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1156,7 +1269,7 @@
           </div>
         </div>
 
-        <!-- Detail Step 5: Simulated Pinning -->
+        <!-- Detail Step 5: Simulated Pinning & Launch -->
         <div id="step-5" class="relative scroll-mt-32">
           <div class="flex flex-col md:flex-row gap-8 items-center">
             <div class="flex-1 text-right order-2 md:order-1">
@@ -1165,9 +1278,9 @@
                 STEP 05</div>
               <h3 class="text-3xl font-bold text-white mb-4">Pin & Launch</h3>
               <p class="text-slate-400 text-lg leading-relaxed mb-6">
-                Click the "Puzzle Piece" icon in your Chrome toolbar.
+                Click the <b>Extensions</b> icon in your toolbar, then pin <b>Nova Beta</b> for instant access.
                 <br><br>
-                Find <span class="text-white font-medium">Nova Beta</span> and click the 📌 Pin icon.
+                Once pinned, the Nova icon will permanently appear next to your address bar.
               </p>
             </div>
 
@@ -1177,238 +1290,187 @@
               <div class="w-2 h-2 rounded-full bg-amber-500 shadow-[0_0_10px_rgba(245,158,11,0.8)]"></div>
             </div>
 
-            <!-- ANIMATION 5: Pinning Extension (Dropdown Style) -->
+            <!-- ANIMATION 5: Unified Browser Frame (Step 5 Focus) -->
             <div class="hidden md:block flex-1 order-1 md:order-3">
               <div
-                class="aspect-[4/3] rounded-2xl bg-[#0f172a] border border-white/10 flex flex-col items-center justify-center overflow-hidden shadow-2xl relative">
+                class="aspect-[4/3] rounded-2xl bg-[#0f172a] border border-white/10 overflow-hidden flex flex-col shadow-2xl relative">
 
-                <!-- Background Context (Browser Header) -->
-                <div
-                  class="absolute top-8 right-0 left-0 h-16 bg-[#1e293b] border-b border-white/5 flex items-center justify-end px-6 mr-4 gap-4">
-                  <!-- Address Bar Hint -->
-                  <div class="flex-1 max-w-lg h-9 bg-[#0f172a] rounded-full border border-white/5 mr-4 hidden md:block">
+                <!-- Unified Mac Header & Browser Toolbar -->
+                <div class="w-full bg-[#1e293b] border-b border-white/5 flex flex-col shrink-0 relative z-30">
+                  <div class="h-8 flex items-center px-4 gap-1.5">
+                    <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                    <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                    <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                    <div class="flex-1 text-center text-[10px] text-slate-500 font-medium pr-12">google.com</div>
                   </div>
+                  <div class="h-16 flex items-center justify-end px-6 mr-4 gap-4">
+                    <div
+                      class="flex-1 max-w-lg h-9 bg-[#0f172a] rounded-full border border-white/5 mr-4 hidden md:block">
+                    </div>
 
-                  <!-- Icons -->
-                  <div class="w-8 h-8 ml-4 rounded-full bg-white/5 flex items-center justify-center relative z-20">
-                    <!-- Pinned Extension Icon (Appears on Puzzle Hover/Click) -->
-                    <div class="absolute right-full mr-2 top-1/2 -translate-y-1/2 pointer-events-none"
-                      aria-hidden="true">
+                    <div class="flex items-center gap-3 relative">
+                      <!-- This icon appears when pinned -->
                       <div
-                        class="w-8 h-8 rounded-full flex items-center justify-center text-[10px] font-extrabold text-white shadow-lg border border-white/10 opacity-0"
-                        style="animation: pinnedExtensionIcon 5s infinite ease-out">
+                        class="w-8 h-8 rounded bg-blue-600 flex items-center justify-center text-[10px] font-bold text-white shadow-lg opacity-0"
+                        style="animation: pinnedIconAppear 5s infinite">
                         N
                       </div>
+                      <!-- Puzzle/Extension Icon -->
+                      <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 011-1h1a2 2 0 100-4H7a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                        </svg>
+                      </div>
+                      <div
+                        class="w-8 h-8 rounded-full bg-purple-500/30 flex items-center justify-center text-[10px] font-bold text-purple-200">
+                        U</div>
                     </div>
-                    <!-- Puzzle Icon -->
-                    <svg class="w-5 h-5 text-slate-400" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                      <path fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round"
-                        stroke-width="32"
-                        d="M413.66,246.1H386a2,2,0,0,1-2-2V166.86A38.86,38.86,0,0,0,345.14,128H267.9a2,2,0,0,1-2-2V98.34c0-27.14-21.5-49.86-48.64-50.33a49.53,49.53,0,0,0-50.4,49.51V126a2,2,0,0,1-2,2H87.62A39.74,39.74,0,0,0,48,167.62V238a2,2,0,0,0,2,2H76.91c29.37,0,53.68,25.48,54.09,54.85.42,29.87-23.51,57.15-53.29,57.15H50a2,2,0,0,0-2,2v70.38A39.74,39.74,0,0,0,87.62,464H158a2,2,0,0,0,2-2V441.07c0-30.28,24.75-56.35,55-57.06,30.1-.7,57,20.31,57,50.28V462a2,2,0,0,0,2,2h71.14A38.86,38.86,0,0,0,384,425.14v-78a2,2,0,0,1,2-2h28.48c27.63,0,49.52-22.67,49.52-50.4S440.8,246.1,413.66,246.1Z" />
-                    </svg>
-
                   </div>
+
+                  <!-- Dropdown Menu -->
                   <div
-                    class="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center text-xs text-purple-300 font-bold border border-purple-500/30">
-                    U</div>
-                </div>
-                <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-
-                <!-- Dropdown Menu -->
-                <div
-                  class="absolute top-20 right-8 w-72 bg-[#1e293b] rounded-xl border border-white/10 shadow-2xl overflow-hidden transform origin-top-right transition-all duration-300 z-10"
-                  style="animation: toggleDropdown 5s infinite">
-                  <div class="px-4 py-3 border-b border-slate-700/50">
-                    <div class="text-sm font-medium text-white">Extensions</div>
-                  </div>
-
-                  <!-- Extension Item -->
-                  <div class="px-3 py-2 hover:bg-white/5 transition-colors group">
-                    <div class="flex items-center gap-3">
-                      <div class="w-8 h-8 rounded bg-white flex items-center justify-center">
-                        <!-- Simple Chrome Icon Placeholder -->
-                        <div class="w-4 h-4 rounded-full bg-blue-500"></div>
-                      </div>
-                      <div class="flex-1">
-                        <div class="text-sm text-slate-200">Nova Extension</div>
-                        <div class="text-[10px] text-slate-500">Access functionality</div>
-                      </div>
-                      <!-- Pin Icon -->
-                      <div class="w-4 h-8 flex items-center rounded-full hover:bg-white/10 cursor-pointer relative">
-                        <svg class="w-4 h-4 text-slate-500 transition-colors duration-300"
-                          style="animation: pinActive 5s infinite" fill="currentColor" viewBox="0 0 24 24">
+                    class="absolute top-20 right-8 w-64 bg-[#1e293b] rounded-xl border border-white/20 shadow-2xl overflow-hidden z-40"
+                    style="animation: step5Dropdown 5s infinite">
+                    <div class="p-3 border-b border-white/5 bg-white/5">
+                      <span class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Extensions</span>
+                    </div>
+                    <div class="p-2">
+                      <div
+                        class="flex items-center justify-between p-2 rounded bg-blue-600/10 border border-blue-500/20">
+                        <div class="flex items-center gap-3">
+                          <div
+                            class="w-6 h-6 rounded bg-blue-600 flex items-center justify-center text-[10px] font-bold text-white">
+                            N</div>
+                          <span class="text-xs text-white">Nova Beta</span>
+                        </div>
+                        <svg id="pin-icon" class="w-4 h-4 text-slate-500" style="animation: pinColorChange 5s infinite"
+                          fill="currentColor" viewBox="0 0 24 24">
                           <path
                             d="M16 9V4l1 0c.55 0 1-.45 1-1s-.45-1-1-1H7C6.45 1 6 1.45 6 2s.45 1 1 1l1 0v5c0 1.66-1.34 3-3 3v2h5.97v7l1 1 1-1v-7H19v-2c-1.66 0-3-1.34-3-3z" />
                         </svg>
                       </div>
                     </div>
                   </div>
-
-                  <div class="px-3 py-2 opacity-50">
-                    <div class="flex items-center gap-3">
-                      <div class="w-8 h-8 rounded bg-slate-700"></div>
-                      <div class="flex-1">
-                        <div class="text-sm text-slate-400">Google Docs Offline</div>
-                      </div>
-                      <svg class="w-4 h-4 text-slate-600" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                          d="M16 9V4l1 0c.55 0 1-.45 1-1s-.45-1-1-1H7C6.45 1 6 1.45 6 2s.45 1 1 1l1 0v5c0 1.66-1.34 3-3 3v2h5.97v7l1 1 1-1v-7H19v-2c-1.66 0-3-1.34-3-3z" />
-                      </svg>
-                    </div>
-                  </div>
                 </div>
 
-                <!-- Cursor Animation (Corrected Alignment) -->
-                <div class="absolute z-50 pointer-events-none"
-                  style="animation: cursorPath 5s infinite; right: 0; top: 120%;">
-                  <svg class="w-6 h-6 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" fill="currentColor"
+                <!-- Page Content -->
+                <div class="flex-1 p-8 pt-12 space-y-4 opacity-5 pointer-events-none">
+                  <div class="w-3/4 h-6 bg-slate-700 rounded-full"></div>
+                  <div class="w-1/2 h-4 bg-slate-700 rounded-full"></div>
+                  <div class="w-full h-32 bg-slate-700/50 rounded-2xl"></div>
+                </div>
+
+                <!-- Animated Mouse Cursor -->
+                <div class="absolute z-50 pointer-events-none" style="animation: step5Cursor 5s infinite">
+                  <svg class="w-6 h-6 text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]" fill="currentColor"
                     viewBox="0 0 24 24">
                     <path d="M7 2l12 11.2-5.8.5 3.3 7.3-2.2.9-3.2-7.4-4.4 4V2z" />
                   </svg>
                 </div>
 
-                <!-- Styles -->
                 <style>
-                  @keyframes toggleDropdown {
+                  @keyframes step5Dropdown {
 
                     0%,
-                    15% {
+                    20% {
                       opacity: 0;
-                      transform: scale(0.95);
+                      transform: translateY(-10px) scale(0.95);
                       pointer-events: none;
                     }
 
-                    20%,
+                    25%,
                     90% {
                       opacity: 1;
-                      transform: scale(1);
+                      transform: translateY(0) scale(1);
                       pointer-events: auto;
                     }
 
+                    95%,
                     100% {
                       opacity: 0;
-                      transform: scale(0.95);
-                      pointer-events: none;
+                      transform: translateY(-10px) scale(0.95);
                     }
                   }
 
-                  @keyframes cursorPath {
+                  @keyframes step5Cursor {
                     0% {
-                      top: 120%;
-                      right: 20%;
-                    }
-
-                    15% {
-                      top: 60px;
-                      right: 78px;
-                      transform: scale(1);
-                    }
-
-                    /* Hover Puzzle */
-                    18% {
-                      top: 60px;
-                      right: 78px;
-                      transform: scale(0.9);
-                    }
-
-                    /* Click Puzzle */
-                    22% {
-                      top: 60px;
-                      right: 78px;
-                      transform: scale(1);
-                    }
-
-                    40% {
-                      top: 150px;
-                      right: 40px;
-                    }
-
-                    /* Move to Pin */
-                    50% {
-                      top: 150px;
-                      right: 40px;
-                      transform: scale(0.9);
-                    }
-
-                    /* Click Pin */
-                    55% {
-                      top: 150px;
-                      right: 40px;
-                      transform: scale(1);
-                    }
-
-                    /* Move away */
-                    100% {
-                      top: 150px;
-                      right: 40px;
-                      transform: scale(0.9);
-                    }
-
-                  }
-
-                  @keyframes pinnedExtensionIcon {
-
-                    0%,
-                    49% {
+                      top: 80%;
+                      left: 50%;
                       opacity: 0;
-                      transform: translateX(-10px) scale(0.5);
                     }
 
-                    /* Appear before pin click */
+                    10% {
+                      top: 80%;
+                      left: 50%;
+                      opacity: 1;
+                    }
+
+                    /* Move to Puzzle icon */
+                    25% {
+                      top: 60px;
+                      left: calc(100% - 100px);
+                    }
+
+                    28% {
+                      transform: scale(0.8);
+                    }
+
+                    32% {
+                      transform: scale(1);
+                    }
+
+                    /* Move to Pin inside dropdown */
                     50% {
-                      opacity: 1;
-                      transform: translateX(0) scale(1.08);
+                      top: 155px;
+                      left: calc(100% - 60px);
                     }
 
-                    /* Settle on click */
-                    52% {
-                      opacity: 1;
-                      transform: translateX(0) scale(0.96);
+                    53% {
+                      transform: scale(0.8);
                     }
 
-                    55%,
+                    57% {
+                      transform: scale(1);
+                    }
+
+                    /* Stay and fade */
+                    85% {
+                      opacity: 1;
+                    }
+
                     100% {
-                      opacity: 1;
-                      transform: translateX(0) scale(1);
+                      top: 155px;
+                      left: calc(100% - 60px);
+                      opacity: 0;
                     }
                   }
 
-                  @keyframes pinActive {
+                  @keyframes pinColorChange {
 
                     0%,
-                    50% {
+                    53% {
                       color: #64748b;
                     }
 
-                    55%,
+                    57%,
                     100% {
                       color: #3b82f6;
                     }
-
-                    /* Blue */
                   }
 
-                  @keyframes pinClickRipple {
+                  @keyframes pinnedIconAppear {
 
                     0%,
-                    50% {
-                      transform: scale(0);
+                    55% {
                       opacity: 0;
+                      transform: scale(0.5) translateX(10px);
                     }
 
-                    51% {
-                      transform: scale(0);
-                      opacity: 1;
-                    }
-
-                    60% {
-                      transform: scale(1.5);
-                      opacity: 0;
-                    }
-
+                    60%,
                     100% {
-                      transform: scale(0);
-                      opacity: 0;
+                      opacity: 1;
+                      transform: scale(1) translateX(0);
                     }
                   }
                 </style>
@@ -1416,8 +1478,6 @@
             </div>
           </div>
         </div>
-
-      </div>
 
     </section>
 

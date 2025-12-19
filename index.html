@@ -167,11 +167,264 @@
     .text-glow {
       text-shadow: 0 0 40px rgba(192, 132, 252, 0.3);
     }
+
+    html.theme-light ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+
+    html.theme-light ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+    }
+
+    html.theme-light ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+
+    html.theme-light body {
+      background-color: #fdfcfe;
+      background-image:
+        radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.08) 0px, transparent 40%),
+        radial-gradient(at 100% 0%, rgba(147, 51, 234, 0.08) 0px, transparent 40%),
+        radial-gradient(at 50% 50%, rgba(236, 72, 153, 0.05) 0px, transparent 60%);
+    }
+
+    html.theme-light .glass-panel {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(15, 23, 42, 0.05);
+      box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.01),
+        0 20px 25px -5px rgba(0, 0, 0, 0.05),
+        0 10px 10px -5px rgba(0, 0, 0, 0.02);
+    }
+
+    html.theme-light .glass-card {
+      background: rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(15, 23, 42, 0.05);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    html.theme-light .glass-card:hover {
+      background: rgba(255, 255, 255, 0.8);
+      border-color: rgba(15, 23, 42, 0.1);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+    }
+
+    html.theme-light .text-glow {
+      text-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
+    }
+
+    /* Light Mode Typography Overrides - Be selective for white text */
+    html.theme-light .text-slate-100 {
+      color: #0f172a;
+    }
+
+    html.theme-light .text-slate-200 {
+      color: #1e293b;
+    }
+
+    html.theme-light .text-slate-300 {
+      color: #334155;
+    }
+
+    html.theme-light .text-slate-400 {
+      color: #475569;
+    }
+
+    /* Only change text-white when it's not on a fixed dark background */
+    html.theme-light :not(.bg-gradient-to-r):not(.bg-blue-600):not(.bg-purple-600):not(.bg-indigo-500).text-white,
+    html.theme-light h1.text-white,
+    html.theme-light h2.text-white,
+    html.theme-light h3.text-white,
+    html.theme-light p.text-white,
+    html.theme-light span.text-white:not(.group-hover\:text-white) {
+      color: #020617;
+    }
+
+    html.theme-light .bg-white\/5 {
+      background-color: rgba(15, 23, 42, 0.04);
+    }
+
+    html.theme-light .bg-white\/10 {
+      background-color: rgba(15, 23, 42, 0.08);
+    }
+
+    html.theme-light .border-white\/10 {
+      border-color: rgba(15, 23, 42, 0.08);
+    }
+
+    html.theme-light .border-white\/20 {
+      border-color: rgba(15, 23, 42, 0.12);
+    }
+
+    /* Badge Contrast Fix */
+    html.theme-light .text-cyan-300 {
+      color: #0891b2;
+    }
+
+    /* cyan-600 level for readability */
+    html.theme-light .text-pink-300 {
+      color: #db2777;
+    }
+
+    /* pink-600 level */
+    html.theme-light .text-emerald-300 {
+      color: #059669;
+    }
+
+    /* emerald-600 level */
+    html.theme-light .text-amber-300 {
+      color: #d97706;
+    }
+
+    /* amber-600 level */
+    html.theme-light .text-purple-300 {
+      color: #9333ea;
+    }
+
+    /* purple-600 level */
+
+    html.theme-light .from-white {
+      --tw-gradient-from: #0f172a var(--tw-gradient-from-position);
+      --tw-gradient-to: rgb(15 23 42 / 0) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    }
+
+    html.theme-light .via-white {
+      --tw-gradient-to: rgb(15 23 42 / 0) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-from), #1e293b var(--tw-gradient-via-position), var(--tw-gradient-to);
+    }
+
+    html.theme-light .to-slate-400 {
+      --tw-gradient-to: #64748b var(--tw-gradient-to-position);
+    }
+
+    /* Background blobs adjustment for light mode */
+    html.theme-light .animate-blob {
+      mix-blend-mode: multiply;
+      opacity: 0.15;
+    }
+
+    /* Lower Section Overrides */
+    html.theme-light #how-to .bg-slate-900\/80 {
+      background-color: rgba(255, 255, 255, 0.82);
+    }
+
+    html.theme-light #how-to .bg-white\/5 {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    html.theme-light #how-to .bg-gradient-to-b.from-white\/20 {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05), transparent);
+    }
+
+    /* Animation Mockups Light Mode */
+    html.theme-light .aspect-\[4\/3\] {
+      background-color: #f1f5f9 !important;
+      border-color: rgba(15, 23, 42, 0.08) !important;
+    }
+
+    /* Step 1 animation */
+    html.theme-light #step-1 .bg-\[\#0f172a\] {
+      background-color: #f8fafc !important;
+    }
+
+    html.theme-light #step-1 .text-slate-700 {
+      color: #cbd5e1 !important;
+    }
+
+    /* Step 2 animation (Browser) */
+    html.theme-light #step-2 .bg-\[\#1e293b\] {
+      background-color: #f1f5f9 !important;
+    }
+
+    html.theme-light #step-2 .bg-\[\#0f172a\] {
+      background-color: #ffffff !important;
+      border-color: rgba(15, 23, 42, 0.1) !important;
+    }
+
+    html.theme-light #step-2 .bg-\[\#334155\] {
+      background-color: #e2e8f0 !important;
+    }
+
+    html.theme-light #step-2 .text-white {
+      color: #020617 !important;
+    }
+
+    /* Step 3 animation (Toggle) */
+    html.theme-light #step-3 .bg-\[\#0f172a\] {
+      background-color: #f8fafc !important;
+    }
+
+    html.theme-light #step-3 .bg-\[\#1e293b\] {
+      background-color: #ffffff !important;
+      border-color: rgba(15, 23, 42, 0.1) !important;
+    }
+
+    html.theme-light #step-3 .bg-\[\#2e3546\] {
+      background-color: #f1f5f9 !important;
+    }
+
+    html.theme-light #step-3 .text-slate-200 {
+      color: #0f172a !important;
+    }
+
+    /* Step 4 animation (File Picker) */
+    html.theme-light #step-4 .bg-\[\#1e293b\] {
+      background-color: #ffffff !important;
+    }
+
+    html.theme-light #step-4 .bg-\[\#334155\] {
+      background-color: #f1f5f9 !important;
+      border-color: rgba(15, 23, 42, 0.1) !important;
+    }
+
+    html.theme-light #step-4 .bg-\[\#0f172a\] {
+      background-color: #f8fafc !important;
+    }
+
+    html.theme-light #step-4 .text-slate-200 {
+      color: #0f172a !important;
+    }
+
+    /* Step 5 animation (Dropdown) */
+    html.theme-light #step-5 .bg-\[\#0f172a\] {
+      background-color: #f1f5f9 !important;
+    }
+
+    html.theme-light #step-5 .bg-\[\#1e293b\] {
+      background-color: #ffffff !important;
+      border-color: rgba(15, 23, 42, 0.1) !important;
+    }
+
+    html.theme-light #step-5 .text-white {
+      color: #020617 !important;
+    }
+
+    html.theme-light #step-5 .text-slate-200 {
+      color: #0f172a !important;
+    }
+
+    html.theme-light #step-5 .bg-white\/5 {
+      background-color: rgba(0, 0, 0, 0.05) !important;
+    }
   </style>
 </head>
 
 <body
   class="min-h-screen text-slate-100 antialiased overflow-x-hidden selection:bg-purple-500/30 selection:text-purple-200">
+
+  <div class="fixed top-6 right-6 z-50">
+    <button id="themeToggle" type="button" aria-pressed="false"
+      class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-slate-200 hover:text-white hover:bg-white/10 transition">
+      <span>Theme</span>
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path
+          d="M12 3a1 1 0 0 1 1 1v1.2a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1zm6.36 2.64a1 1 0 0 1 0 1.41l-.85.85a1 1 0 1 1-1.41-1.41l.85-.85a1 1 0 0 1 1.41 0zM21 11a1 1 0 1 1 0 2h-1.2a1 1 0 1 1 0-2H21zM18.36 18.36a1 1 0 0 1-1.41 0l-.85-.85a1 1 0 0 1 1.41-1.41l.85.85a1 1 0 0 1 0 1.41zM12 19a1 1 0 0 1 1 1v1.2a1 1 0 1 1-2 0V20a1 1 0 0 1 1-1zM7.05 16.1a1 1 0 0 1 0 1.41l-.85.85a1 1 0 1 1-1.41-1.41l.85-.85a1 1 0 0 1 1.41 0zM4.2 11a1 1 0 1 1 0 2H3a1 1 0 1 1 0-2h1.2zM7.05 5.64a1 1 0 0 1-1.41 1.41l-.85-.85A1 1 0 1 1 6.2 4.8l.85.85zM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8z" />
+      </svg>
+    </button>
+  </div>
 
   <!-- Background Ambience -->
   <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
@@ -262,8 +515,7 @@
         <div
           class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-200">
           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M13 10V3L4 14h7v7l9-11h-7z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
           </svg>
         </div>
         <h2 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
@@ -283,13 +535,15 @@
           <svg class="w-4 h-4 text-emerald-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
           </svg>
-          <span><span class="text-white font-semibold">No storage</span>: designed to work without saving your info.</span>
+          <span><span class="text-white font-semibold">No storage</span>: designed to work without saving your
+            info.</span>
         </div>
         <div class="flex items-center gap-2">
           <svg class="w-4 h-4 text-cyan-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h10M7 16h6" />
           </svg>
-          <span><span class="text-white font-semibold">Receipt parsing</span>: understands purchase emails and totals.</span>
+          <span><span class="text-white font-semibold">Receipt parsing</span>: understands purchase emails and
+            totals.</span>
         </div>
         <div class="flex items-center gap-2">
           <svg class="w-4 h-4 text-purple-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -938,7 +1192,8 @@
                   <!-- Icons -->
                   <div class="w-8 h-8 ml-4 rounded-full bg-white/5 flex items-center justify-center relative z-20">
                     <!-- Pinned Extension Icon (Appears on Puzzle Hover/Click) -->
-                    <div class="absolute right-full mr-2 top-1/2 -translate-y-1/2 pointer-events-none" aria-hidden="true">
+                    <div class="absolute right-full mr-2 top-1/2 -translate-y-1/2 pointer-events-none"
+                      aria-hidden="true">
                       <div
                         class="w-8 h-8 rounded-full flex items-center justify-center text-[10px] font-extrabold text-white shadow-lg border border-white/10 opacity-0"
                         style="animation: pinnedExtensionIcon 5s infinite ease-out">
@@ -1082,47 +1337,47 @@
                       transform: scale(1);
                     }
 
-                     /* Move away */
-                     100% {
-                       top: 150px;
-                       right: 40px;
-                       transform: scale(0.9);
-                     }
+                    /* Move away */
+                    100% {
+                      top: 150px;
+                      right: 40px;
+                      transform: scale(0.9);
+                    }
 
-                   }
+                  }
 
-                   @keyframes pinnedExtensionIcon {
+                  @keyframes pinnedExtensionIcon {
 
-                     0%,
-                     49% {
-                       opacity: 0;
-                       transform: translateX(-10px) scale(0.5);
-                     }
+                    0%,
+                    49% {
+                      opacity: 0;
+                      transform: translateX(-10px) scale(0.5);
+                    }
 
-                     /* Appear before pin click */
-                     50% {
-                       opacity: 1;
-                       transform: translateX(0) scale(1.08);
-                     }
+                    /* Appear before pin click */
+                    50% {
+                      opacity: 1;
+                      transform: translateX(0) scale(1.08);
+                    }
 
-                     /* Settle on click */
-                     52% {
-                       opacity: 1;
-                       transform: translateX(0) scale(0.96);
-                     }
+                    /* Settle on click */
+                    52% {
+                      opacity: 1;
+                      transform: translateX(0) scale(0.96);
+                    }
 
-                     55%,
-                     100% {
-                       opacity: 1;
-                       transform: translateX(0) scale(1);
-                     }
-                   }
+                    55%,
+                    100% {
+                      opacity: 1;
+                      transform: translateX(0) scale(1);
+                    }
+                  }
 
-                   @keyframes pinActive {
+                  @keyframes pinActive {
 
-                     0%,
-                     50% {
-                       color: #64748b;
+                    0%,
+                    50% {
+                      color: #64748b;
                     }
 
                     55%,
@@ -1182,6 +1437,41 @@
     </footer>
 
   </main>
+
+  <script>
+      (function () {
+        const root = document.documentElement;
+        const toggle = document.getElementById('themeToggle');
+
+        const storedTheme = localStorage.getItem('theme');
+        const isLight = storedTheme === 'light' || (!storedTheme && window.matchMedia('(prefers-color-scheme: light)').matches);
+
+        if (isLight) {
+          root.classList.add('theme-light');
+        }
+
+        const updateUI = () => {
+          if (!toggle) return;
+          const isCurrentlyLight = root.classList.contains('theme-light');
+          toggle.setAttribute('aria-pressed', isCurrentlyLight ? 'true' : 'false');
+        };
+
+        updateUI();
+
+        if (toggle) {
+          toggle.addEventListener('click', () => {
+            root.classList.add('transition-theme');
+            const isNowLight = root.classList.toggle('theme-light');
+            localStorage.setItem('theme', isNowLight ? 'light' : 'dark');
+            updateUI();
+
+            setTimeout(() => {
+              root.classList.remove('transition-theme');
+            }, 300);
+          });
+        }
+      })();
+  </script>
 </body>
 
 </html>
